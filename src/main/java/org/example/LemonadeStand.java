@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class LemonadeStand {
     public static int defaultStartingSugar = 10;
     public static int defaultStartingIce = 10;
@@ -68,6 +70,19 @@ public class LemonadeStand {
     // If the lemonade is successfully made, the method should add the sale amount to the money field and return true.
     //
     // HINT: You can copy and paste the body of the sellLemonade method and should only need to modify the first line.
+
+    public boolean sellLemonade (int lemons, int sugar, int ice ){
+        Lemonade lemonade = new Lemonade(lemons,sugar,ice);
+        Lemonade madeLemonade =  this.tryMakingLemonade(lemonade);
+        if(madeLemonade != null){
+            money += calculateSale(lemonade);
+            return true;
+        }
+        else {
+            return  false;
+        }
+
+    }
 
     private Lemonade tryMakingLemonade(Lemonade lemonade) {
         if (sugar >= lemonade.getSugar() && ice >= lemonade.getIce() && lemons >= lemonade.getLemons()) {

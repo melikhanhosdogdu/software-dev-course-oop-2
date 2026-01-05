@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Lemonade {
     // Static field examples
     public static int defaultSugar = 2;
@@ -51,4 +53,12 @@ public class Lemonade {
     //
     // HINT: You can get the counts from the two Lemonade objects using their get methods, e.g.:
     // int newLemonadeLemons = lemonade1.getLemons() + lemonade2.getLemons();
+    public static Lemonade mix (Lemonade lemonade1, Lemonade lemonade2){
+        int sumOfLemons = (lemonade1.getLemons() + lemonade2.getLemons() ) ;
+        int sumOfSugars = (lemonade1.getSugar() + lemonade2.getSugar());
+        int sumOfIce = lemonade1.getIce() + lemonade2.getIce();
+
+        return new Lemonade(sumOfLemons,sumOfSugars,sumOfIce);
+
+    }
 }
